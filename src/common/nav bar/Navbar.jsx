@@ -1,4 +1,4 @@
-import NavLinks from "../../components/nav links/NavLinks";
+import NavLinks from "../../components/navlinks/NavLinks";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
