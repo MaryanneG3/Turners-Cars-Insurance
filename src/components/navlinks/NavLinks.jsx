@@ -52,6 +52,22 @@ const HeaderNavlinks = () => {
 };
 
 const NavbarNavlinks = () => {
+  const [dropdowns, setDropdowns] = useState({
+    howToBuy: false,
+    sellYourCar: false,
+    financeAndInsurance: false,
+    auctions: false,
+    servicesAndInfo: false,
+    vehicles: false,
+  });
+
+  const toggleMenu = (menu) => {
+    setDropdowns((prevState) => ({
+      ...prevState,
+      [menu]: !prevState[menu],
+    }));
+  };
+
   return (
     <div className={styles.navbarlinksContainer}>
       <div className={styles.leftSection}>
@@ -60,37 +76,148 @@ const NavbarNavlinks = () => {
           <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
         </NavLink>
 
-        <button className={styles.navlink}>
-          <p>How to Buy</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("howToBuy");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("howToBuy");
+          }}
+        >
+          <button
+            className={styles.navlink}
+            aria-haspopup="true"
+            aria-expanded={dropdowns.howToBuy}
+          >
+            <p>How to Buy</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
 
-        <button to="#sell-your-car-page" className={styles.navlink}>
-          <p>Sell your Car</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+          {dropdowns.howToBuy && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
 
-        <button to="#finance-and-insurance-page" className={styles.navlink}>
-          <p>Finance & Insurance</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("sellYourCar");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("sellYourCar");
+          }}
+        >
+          <button
+            className={styles.navlink}
+            aria-haspopup="true"
+            aria-expanded={dropdowns.howToBuy}
+          >
+            <p>Sell your Car</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
+          {dropdowns.sellYourCar && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
+
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("financeAndInsurance");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("financeAndInsurance");
+          }}
+        >
+          <button to="#finance-and-insurance-page" className={styles.navlink}>
+            <p>Finance & Insurance</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
+          {dropdowns.financeAndInsurance && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.rightSection}>
-        <button to="#auctions-page" className={styles.navlink}>
-          <p>Auctions</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("auctions");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("auctions");
+          }}
+        >
+          <button to="#auctions-page" className={styles.navlink}>
+            <p>Auctions</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
+          {dropdowns.auctions && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
 
-        <button to="#services-and-info-page" className={styles.navlink}>
-          <p>Services & Info</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("servicesAndInfo");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("servicesAndInfo");
+          }}
+        >
+          <button to="#services-and-info-page" className={styles.navlink}>
+            <p>Services & Info</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
+          {dropdowns.servicesAndInfo && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
 
-        <button to="#vehicles-sidebar" className={styles.navlink}>
-          <p>Vehicles</p>
-          <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-        </button>
+        <div
+          className={styles.dropdownContainer}
+          onMouseEnter={() => {
+            toggleMenu("vehicles");
+          }}
+          onMouseLeave={() => {
+            toggleMenu("vehicles");
+          }}
+        >
+          <button to="#vehicles-sidebar" className={styles.navlink}>
+            <p>Vehicles</p>
+            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
+          </button>
+          {dropdowns.vehicles && (
+            <div className={styles.dropdownmenu}>
+              <NavLink to="#opt 1">Option 1</NavLink>
+              <NavLink to="#opt 2">Option 1</NavLink>
+              <NavLink to="#opt 3">Option 1</NavLink>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
