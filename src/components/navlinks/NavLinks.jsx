@@ -71,7 +71,7 @@ const NavbarNavlinks = () => {
   return (
     <div className={styles.navbarlinksContainer}>
       <div className={styles.leftSection}>
-        <NavLink className={styles.navlink}>
+        <NavLink to="#find-a-car-page" className={styles.navlink}>
           <p>Find a Car</p>
           <FontAwesomeIcon icon={faMagnifyingGlass} className={styles.icon} />
         </NavLink>
@@ -96,9 +96,13 @@ const NavbarNavlinks = () => {
 
           {dropdowns.howToBuy && (
             <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+              <NavLink to="#opt 1">View our Cars</NavLink>
+              <NavLink to="#opt 2">Ways to Buy</NavLink>
+              <NavLink to="#opt 3">Book a test drive</NavLink>
+              <NavLink to="#opt 1">How to pay</NavLink>
+              <NavLink to="#opt 2">FAQs about buying</NavLink>
+              <NavLink to="#opt 3">Turners live</NavLink>
+              <NavLink to="#opt 3">Website tools</NavLink>
             </div>
           )}
         </div>
@@ -120,11 +124,12 @@ const NavbarNavlinks = () => {
             <p>Sell your Car</p>
             <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
           </button>
+
           {dropdowns.sellYourCar && (
             <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+              <NavLink to="#opt 1">Ways to sell</NavLink>
+              <NavLink to="#opt 2">Book an appraisal</NavLink>
+              <NavLink to="#opt 3">FAQs about selling</NavLink>
             </div>
           )}
         </div>
@@ -144,9 +149,11 @@ const NavbarNavlinks = () => {
           </button>
           {dropdowns.financeAndInsurance && (
             <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+              <NavLink to="#opt 1">Finance information</NavLink>
+              <NavLink to="#opt 2">Finance FAQ</NavLink>
+              <NavLink to="#opt 3">Apply Online for Finance</NavLink>
+              <NavLink to="#opt 3">Apply Online for Business Finance</NavLink>
+              <NavLink to="#opt 3">Car Insurance</NavLink>
             </div>
           )}
         </div>
@@ -168,9 +175,12 @@ const NavbarNavlinks = () => {
           </button>
           {dropdowns.auctions && (
             <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+              <NavLink to="#opt 1">All car auctions</NavLink>
+              <NavLink to="#opt 2">Whangarei</NavLink>
+              <NavLink to="#opt 3">North West Auckland</NavLink>
+              <NavLink to="#opt 1">Hamilton</NavLink>
+              <NavLink to="#opt 2">Tauranga</NavLink>
+              <NavLink to="#opt 3">Napier</NavLink>
             </div>
           )}
         </div>
@@ -190,19 +200,16 @@ const NavbarNavlinks = () => {
           </button>
           {dropdowns.servicesAndInfo && (
             <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+              <NavLink to="#opt 1">5 day Money Back Guarentee</NavLink>
+              <NavLink to="#opt 2">Turners Group Overview</NavLink>
+              <NavLink to="#opt 3">Terms & Conditions</NavLink>
             </div>
           )}
         </div>
 
         <div
           className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("vehicles");
-          }}
-          onMouseLeave={() => {
+          onClick={() => {
             toggleMenu("vehicles");
           }}
         >
@@ -211,10 +218,18 @@ const NavbarNavlinks = () => {
             <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
           </button>
           {dropdowns.vehicles && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Option 1</NavLink>
-              <NavLink to="#opt 2">Option 1</NavLink>
-              <NavLink to="#opt 3">Option 1</NavLink>
+            <div className={`${styles.dropdownmenu} ${styles.vehicleSideBar}`}>
+              <NavLink to="#Cars-page">Cars</NavLink>
+              <NavLink to="#Trucks & Machinery">Trucks & Machinery</NavLink>
+              <NavLink to="#Damaged & End of Life">
+                Damaged & End of Life
+              </NavLink>
+              <NavLink to="#Motorcycles">Motorcycles</NavLink>
+              <NavLink to="#General Goods">General Goods</NavLink>
+              <NavLink to="#Buses, Caravans & Motorhomes">
+                Buses, Caravans & Motorhomes
+              </NavLink>
+              <NavLink to="#Boats & Marine">Boats & Marine</NavLink>
             </div>
           )}
         </div>
