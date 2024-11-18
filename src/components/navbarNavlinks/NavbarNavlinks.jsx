@@ -64,105 +64,70 @@ const NavbarNavlinks = () => {
           ]}
         />
 
-        <div
-          className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("financeAndInsurance");
-          }}
-          onMouseLeave={() => {
-            toggleMenu("financeAndInsurance");
-          }}
-        >
-          <button to="#finance-and-insurance-page" className={styles.navlink}>
-            <p>Finance & Insurance</p>
-            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-          </button>
-          {dropdowns.financeAndInsurance && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Finance information</NavLink>
-              <NavLink to="#opt 2">Finance FAQ</NavLink>
-              <NavLink to="#opt 3">Apply Online for Finance</NavLink>
-              <NavLink to="#opt 3">Apply Online for Business Finance</NavLink>
-              <NavLink to="#opt 3">Car Insurance</NavLink>
-            </div>
-          )}
-        </div>
+        <DropdownMenu
+          menu="financeAndInsurance"
+          title="Finance & Insurance"
+          icon={faAngleDown}
+          dropdowns={dropdowns}
+          toggleMenu={toggleMenu}
+          links={[
+            { to: "#opt 1", label: "Finance information" },
+            { to: "#opt 2", label: "Finance FAQ" },
+            { to: "#opt 3", label: "Apply Online for Finance" },
+            { to: "#opt 4", label: "Apply Online for Business Finance" },
+            { to: "#opt 5", label: "Car Insurance" },
+          ]}
+        />
       </div>
 
       <div className={styles.rightSection}>
-        <div
-          className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("auctions");
-          }}
-          onMouseLeave={() => {
-            toggleMenu("auctions");
-          }}
-        >
-          <button to="#auctions-page" className={styles.navlink}>
-            <p>Auctions</p>
-            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-          </button>
-          {dropdowns.auctions && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">All car auctions</NavLink>
-              <NavLink to="#opt 2">Whangarei</NavLink>
-              <NavLink to="#opt 3">North West Auckland</NavLink>
-              <NavLink to="#opt 1">Hamilton</NavLink>
-              <NavLink to="#opt 2">Tauranga</NavLink>
-              <NavLink to="#opt 3">Napier</NavLink>
-            </div>
-          )}
-        </div>
+        <DropdownMenu
+          menu="auctions"
+          title="Auctions"
+          icon={faAngleDown}
+          dropdowns={dropdowns}
+          toggleMenu={toggleMenu}
+          links={[
+            { to: "#opt 1", label: "All car auctions" },
+            { to: "#opt 2", label: "Whangarei" },
+            { to: "#opt 3", label: "North West Auckland" },
+            { to: "#opt 4", label: "Hamilton" },
+            { to: "#opt 5", label: "Tauranga" },
+          ]}
+        />
 
-        <div
-          className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("servicesAndInfo");
-          }}
-          onMouseLeave={() => {
-            toggleMenu("servicesAndInfo");
-          }}
-        >
-          <button to="#services-and-info-page" className={styles.navlink}>
-            <p>Services & Info</p>
-            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-          </button>
-          {dropdowns.servicesAndInfo && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">5 day Money Back Guarentee</NavLink>
-              <NavLink to="#opt 2">Turners Group Overview</NavLink>
-              <NavLink to="#opt 3">Terms & Conditions</NavLink>
-            </div>
-          )}
-        </div>
+        <DropdownMenu
+          menu="servicesAndInfo"
+          title="Services & Info"
+          icon={faAngleDown}
+          dropdowns={dropdowns}
+          toggleMenu={toggleMenu}
+          links={[
+            { to: "#opt 1", label: "5 day Money Back Guarentee" },
+            { to: "#opt 2", label: "Turners Group Overview" },
+            { to: "#opt 3", label: "Terms & Conditions" },
+          ]}
+        />
 
-        <div
-          className={styles.dropdownContainer}
-          onClick={() => {
-            toggleMenu("vehicles");
-          }}
-        >
-          <button to="#vehicles-sidebar" className={styles.navlink}>
-            <p>Vehicles</p>
-            <FontAwesomeIcon icon={faAngleDoubleDown} className={styles.icon} />
-          </button>
-          {dropdowns.vehicles && (
-            <div className={`${styles.dropdownmenu} ${styles.vehicleSideBar}`}>
-              <NavLink to="#Cars-page">Cars</NavLink>
-              <NavLink to="#Trucks & Machinery">Trucks & Machinery</NavLink>
-              <NavLink to="#Damaged & End of Life">
-                Damaged & End of Life
-              </NavLink>
-              <NavLink to="#Motorcycles">Motorcycles</NavLink>
-              <NavLink to="#General Goods">General Goods</NavLink>
-              <NavLink to="#Buses, Caravans & Motorhomes">
-                Buses, Caravans & Motorhomes
-              </NavLink>
-              <NavLink to="#Boats & Marine">Boats & Marine</NavLink>
-            </div>
-          )}
-        </div>
+        <DropdownMenu
+          menu="vehicles"
+          title="Vehicles"
+          icon={faAngleDoubleDown}
+          dropdowns={dropdowns}
+          toggleMenu={toggleMenu}
+          links={[
+            { to: "#Cars-page", label: "Cars" },
+            { to: "#Trucks & Machinery", label: "Trucks & Machinery" },
+            { to: "#Damaged & End of Life", label: "Damaged & End of Life" },
+            { to: "#Motorcycles", label: "Motorcycles" },
+            { to: "#General Goods", label: "General Goods" },
+            {
+              to: "#Buses, Caravans & Motorhomes",
+              label: "Buses, Caravans & Motorhomes",
+            },
+            { to: "#Boats & Marine", label: "Boats & Marine" },
+          ]}
+        />
       </div>
     </div>
   );
