@@ -1,5 +1,5 @@
 import Header from "../../common/header/Header";
-import Navbar from "../../common/nav bar/Navbar";
+import Navbar from "../../common/navbar/Navbar";
 
 export default function BaseLayout() {
   return (

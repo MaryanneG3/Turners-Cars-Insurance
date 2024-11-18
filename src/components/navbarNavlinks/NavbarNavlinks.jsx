@@ -8,6 +8,7 @@ import {
   faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
+import VehicleSidebar from "../../common/vehicleSidebar/VehicleSidebar";
 
 const NavbarNavlinks = () => {
   const [dropdowns, setDropdowns] = useState({
@@ -109,25 +110,7 @@ const NavbarNavlinks = () => {
           ]}
         />
 
-        <DropdownMenu
-          menu="vehicles"
-          title="Vehicles"
-          icon={faAngleDoubleDown}
-          dropdowns={dropdowns}
-          toggleMenu={toggleMenu}
-          links={[
-            { to: "#Cars-page", label: "Cars" },
-            { to: "#Trucks & Machinery", label: "Trucks & Machinery" },
-            { to: "#Damaged & End of Life", label: "Damaged & End of Life" },
-            { to: "#Motorcycles", label: "Motorcycles" },
-            { to: "#General Goods", label: "General Goods" },
-            {
-              to: "#Buses, Caravans & Motorhomes",
-              label: "Buses, Caravans & Motorhomes",
-            },
-            { to: "#Boats & Marine", label: "Boats & Marine" },
-          ]}
-        />
+        <VehicleSidebar />
       </div>
     </div>
   );
