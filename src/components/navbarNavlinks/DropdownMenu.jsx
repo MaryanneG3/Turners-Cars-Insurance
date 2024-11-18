@@ -32,13 +32,3 @@ function DropdownMenu({ menu, title, icon, links, dropdowns, toggleMenu }) {
 }
 
 export default DropdownMenu;
-
-// const links = [
-//   { to: "#opt 1", label: "View our Cars" },
-//   { to: "#opt 2", label: "Ways to Buy" },
-//   { to: "#opt 3", label: "Book a test drive" },
-//   { to: "#opt 4", label: "How to pay" },
-//   { to: "#opt 5", label: "FAQs about buying" },
-//   { to: "#opt 6", label: "Turners live" },
-//   { to: "#opt 7", label: "Website tools" },
-// ];

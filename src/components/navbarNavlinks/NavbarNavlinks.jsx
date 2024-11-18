@@ -51,63 +51,18 @@ const NavbarNavlinks = () => {
           ]}
         />
 
-        <div
-          className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("howToBuy");
-          }}
-          onMouseLeave={() => {
-            toggleMenu("howToBuy");
-          }}
-        >
-          <button
-            className={styles.navlink}
-            aria-haspopup="true"
-            aria-expanded={dropdowns.howToBuy}
-          >
-            <p>How to Buy</p>
-            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-          </button>
-
-          {dropdowns.howToBuy && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">View our Cars</NavLink>
-              <NavLink to="#opt 2">Ways to Buy</NavLink>
-              <NavLink to="#opt 3">Book a test drive</NavLink>
-              <NavLink to="#opt 1">How to pay</NavLink>
-              <NavLink to="#opt 2">FAQs about buying</NavLink>
-              <NavLink to="#opt 3">Turners live</NavLink>
-              <NavLink to="#opt 3">Website tools</NavLink>
-            </div>
-          )}
-        </div>
-
-        <div
-          className={styles.dropdownContainer}
-          onMouseEnter={() => {
-            toggleMenu("sellYourCar");
-          }}
-          onMouseLeave={() => {
-            toggleMenu("sellYourCar");
-          }}
-        >
-          <button
-            className={styles.navlink}
-            aria-haspopup="true"
-            aria-expanded={dropdowns.howToBuy}
-          >
-            <p>Sell your Car</p>
-            <FontAwesomeIcon icon={faAngleDown} className={styles.icon} />
-          </button>
-
-          {dropdowns.sellYourCar && (
-            <div className={styles.dropdownmenu}>
-              <NavLink to="#opt 1">Ways to sell</NavLink>
-              <NavLink to="#opt 2">Book an appraisal</NavLink>
-              <NavLink to="#opt 3">FAQs about selling</NavLink>
-            </div>
-          )}
-        </div>
+        <DropdownMenu
+          menu="sellYourCar"
+          title="Sell your Car"
+          icon={faAngleDown}
+          dropdowns={dropdowns}
+          toggleMenu={toggleMenu}
+          links={[
+            { to: "#opt 1", label: "Ways to sell" },
+            { to: "#opt 2", label: "Book an appraisal" },
+            { to: "#opt 3", label: "FAQs about selling" },
+          ]}
+        />
 
         <div
           className={styles.dropdownContainer}
