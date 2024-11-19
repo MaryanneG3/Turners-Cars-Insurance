@@ -1,30 +1,18 @@
-// const links = [
-//   { to: "#Cars-page", label: "Cars" },
-//   { to: "#Trucks & Machinery", label: "Trucks & Machinery" },
-//   { to: "#Damaged & End of Life", label: "Damaged & End of Life" },
-//   { to: "#Motorcycles", label: "Motorcycles" },
-//   { to: "#General Goods", label: "General Goods" },
-//   {
-//     to: "#Buses, Caravans & Motorhomes",
-//     label: "Buses, Caravans & Motorhomes",
-//   },
-//   { to: "#Boats & Marine", label: "Boats & Marine" },
-// ];
+import { useState } from "react";
+import styles from "./VehicleSidebar.module.css";
+import navlinkstyles from "../../components/navlinks/NavLinks.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 function VehicleSidebar() {
-  return <div>Testing</div>;
-}
+  const [isOpen, setIsOpen] = useState(true);
 
-export default VehicleSidebar;
+  const toggleVehicleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-{
-  /* <DropdownMenu
-  menu="vehicles"
-  title="Vehicles"
-  icon={faAngleDoubleDown}
-  dropdowns={dropdowns}
-  toggleMenu={toggleMenu}
-  links={[
+  const links = [
     { to: "#Cars-page", label: "Cars" },
     { to: "#Trucks & Machinery", label: "Trucks & Machinery" },
     { to: "#Damaged & End of Life", label: "Damaged & End of Life" },
@@ -35,6 +23,28 @@ export default VehicleSidebar;
       label: "Buses, Caravans & Motorhomes",
     },
     { to: "#Boats & Marine", label: "Boats & Marine" },
-  ]}
-/>; */
+  ];
+
+  return (
+    <div className={styles.sidebarBtnContainer}>
+      <button className={navlinkstyles.navlink} onClick={toggleVehicleMenu}>
+        <p>Vehicles</p>
+        <FontAwesomeIcon
+          icon={faAngleDoubleDown}
+          className={navlinkstyles.icon}
+        />
+      </button>
+      {isOpen && (
+        <div className={styles.sidebarlinkscontainer}>
+          {links.map((link, index) => (
+            <NavLink key={index} to={link.to} className={styles.navlink}>
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
+
+export default VehicleSidebar;

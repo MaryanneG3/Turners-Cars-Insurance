@@ -1,0 +1,25 @@
+.sidebarBtnContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.sidebarlinkscontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: 80vh;
+  background-color: #40bdf7;
+  opacity: 80%;
+}
+
+.navlink {
+  text-decoration: none;
+  margin: 10px 20px;
+  color: white;
+  padding: 15px 0;
+  width: 85%;
+  font-size: 14px;
+  font-weight: 600;
+  /* border-bottom: solid 1px rgb(211, 200, 241); */
+}
