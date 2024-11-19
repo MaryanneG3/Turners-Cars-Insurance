@@ -1,24 +1,23 @@
-.sidebarBtnContainer {
-  position: relative;
-  display: inline-block;
+.sidebarContainer {
+  width: 180px;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 50px;
 }
 
 .sidebarlinkscontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  height: 80vh;
+  flex: 1;
+  height: 100%;
   background-color: #40bdf7;
-  opacity: 80%;
 }
 
-.navlink {
+.sidebarnavlink {
   text-decoration: none;
   margin: 10px 20px;
-  color: white;
   padding: 15px 0;
-  width: 85%;
   font-size: 14px;
-  font-weight: 600;
+  color: white;
 }

@@ -20,11 +20,11 @@ function VehicleSidebar({ isOpen }) {
   ];
 
   return (
-    <div className={styles.sidebarBtnContainer}>
+    <div className={styles.sidebarContainer}>
       {isOpen && (
         <div className={styles.sidebarlinkscontainer}>
           {links.map((link, index) => (
-            <NavLink key={index} to={link.to} className={styles.navlink}>
+            <NavLink key={index} to={link.to} className={styles.sidebarnavlink}>
               {link.label}
             </NavLink>
           ))}

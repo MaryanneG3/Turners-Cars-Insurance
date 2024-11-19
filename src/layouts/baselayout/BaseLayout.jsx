@@ -16,8 +16,13 @@ function BaseLayout({ children }) {
     <div className={styles.baseLayout}>
       <Header />
       <Navbar toggleVehicleMenu={toggleVehicleMenu} />
-      <VehicleSidebar isOpen={openVehicleMenu} />
-      <div className={styles.mainContent}>{children}</div>
+
+      <div className={styles.mainsection}>
+        <div className={styles.contentArea}>
+          <div className={styles.mainContent}>{children}</div>
+        </div>
+        <VehicleSidebar isOpen={openVehicleMenu} />
+      </div>
       <Footer />
     </div>
   );

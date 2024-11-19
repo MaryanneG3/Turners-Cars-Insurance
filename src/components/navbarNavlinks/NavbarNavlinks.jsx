@@ -114,10 +114,10 @@ function NavbarNavlinks({ toggleVehicleMenu }) {
           ]}
         />
 
-        <button className={styles.navlink} onClick={toggleVehicleMenu}>
+        <div className={styles.navlink} onClick={toggleVehicleMenu}>
           <p>Vehicles</p>
           <FontAwesomeIcon icon={faAngleDoubleDown} className={styles.icon} />
-        </button>
+        </div>
       </div>
     </div>
   );
