@@ -1,0 +1,6 @@
+.footerContainer {
+  display: flex;
+  width: 100vw;
+  height: 50px;
+  background-color: #1184dd;
+}
