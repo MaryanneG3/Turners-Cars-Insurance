@@ -10,7 +10,6 @@ function Header() {
       </NavLink>
 
       <div className={styles.navlinks}>
-        {/* import and use NavLinks component with a varient for Header */}
         <NavLinks variant="header" />
       </div>
     </div>
