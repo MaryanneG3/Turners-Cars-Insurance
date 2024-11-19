@@ -5,13 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
-function VehicleSidebar() {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleVehicleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
+function VehicleSidebar({ isOpen }) {
   const links = [
     { to: "#Cars-page", label: "Cars" },
     { to: "#Trucks & Machinery", label: "Trucks & Machinery" },
@@ -27,13 +21,6 @@ function VehicleSidebar() {
 
   return (
     <div className={styles.sidebarBtnContainer}>
-      <button className={navlinkstyles.navlink} onClick={toggleVehicleMenu}>
-        <p>Vehicles</p>
-        <FontAwesomeIcon
-          icon={faAngleDoubleDown}
-          className={navlinkstyles.icon}
-        />
-      </button>
       {isOpen && (
         <div className={styles.sidebarlinkscontainer}>
           {links.map((link, index) => (

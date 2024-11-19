@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faAngleDown,
+  faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
-import VehicleSidebar from "../../common/vehicleSidebar/VehicleSidebar";
 
-function NavbarNavlinks() {
+function NavbarNavlinks({ toggleVehicleMenu }) {
   const [dropdowns, setDropdowns] = useState({
     howToBuy: false,
     sellYourCar: false,
@@ -114,7 +114,10 @@ function NavbarNavlinks() {
           ]}
         />
 
-        <VehicleSidebar />
+        <button className={styles.navlink} onClick={toggleVehicleMenu}>
+          <p>Vehicles</p>
+          <FontAwesomeIcon icon={faAngleDoubleDown} className={styles.icon} />
+        </button>
       </div>
     </div>
   );
