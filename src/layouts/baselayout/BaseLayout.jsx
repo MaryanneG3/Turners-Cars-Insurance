@@ -18,11 +18,10 @@ function BaseLayout({ children }) {
       <Navbar toggleVehicleMenu={toggleVehicleMenu} />
 
       <div className={styles.mainsection}>
-        <div className={styles.contentArea}>
-          <div className={styles.mainContent}>{children}</div>
-        </div>
+        <div className={styles.contentArea}>{children}</div>
         <VehicleSidebar isOpen={openVehicleMenu} />
       </div>
+
       <Footer />
     </div>
   );
