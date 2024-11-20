@@ -1,8 +1,9 @@
 .sidebarContainer {
-  width: 180px;
+  width: 150px;
   height: calc(100vh - 50px);
   position: sticky;
   top: 50px;
+  /* transition: width 0.3s ease; */
 }
 
 .sidebarlinkscontainer {

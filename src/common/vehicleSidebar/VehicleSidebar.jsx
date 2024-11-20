@@ -1,8 +1,4 @@
-import { useState } from "react";
 import styles from "./VehicleSidebar.module.css";
-import navlinkstyles from "../../components/navlinks/NavLinks.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
 function VehicleSidebar({ isOpen }) {
