@@ -1,0 +1,85 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  padding: 0 20px;
+  background-color: azure;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 450px;
+  padding: 10px;
+  /* background-color: black; */
+  align-items: center;
+  justify-content: center;
+  padding-inline: 30px;
+  border-radius: 30px;
+  border: 3px solid #40bdf7;
+}
+
+.previewImg {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid #40bdf7;
+}
+
+.uploadImgPrompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadIcon {
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #40bdf7;
+}
+
+/* styling input button */
+
+.hiddenInput {
+  display: none;
+}
+
+/* Custom styled button */
+.customButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+}
+
+.customButton:hover {
+  background-color: #0056b3;
+}
