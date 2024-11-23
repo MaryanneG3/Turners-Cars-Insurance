@@ -7,11 +7,10 @@
   flex-direction: column;
   justify-content: flex-start;
   flex: 1;
-  height: 100%;
   background-color: #40bdf7;
-
+  height: 100%;
   width: 150px;
-  height: calc(100vh - 50px);
+  /* height: calc(100vh - 50px); */
   position: sticky;
   top: 50px;
 
@@ -27,7 +26,7 @@
 
 .sidebarnavlink {
   text-decoration: none;
-  margin: 20px 15px;
+  margin: 15px 15px;
   padding: 5px 0;
   font-size: 14px;
   color: white;
