@@ -57,7 +57,7 @@ export default function Homepage() {
 
             <p>There are 2 main types of Motor Vehicle Insurance:</p>
 
-            <a href="MBI">
+            <a href="#MBI">
               <FontAwesomeIcon
                 icon={faAngleDoubleRight}
                 className={styles.icon}
@@ -76,7 +76,7 @@ export default function Homepage() {
 
           <section id="MBI" className={styles.mbiSection}>
             <h2>Mechanical Breakdown Insurance</h2>
-            <p>
+            <div className={styles.mbiInfo}>
               Mechanical Breakdown Insurance covers the cost of repairing your
               car if you have mechanical or electrical failure.
               <br />
@@ -126,7 +126,17 @@ export default function Homepage() {
                 />
                 Generous claim limits that are set when you purchase your policy
               </div>
-            </p>
+              <br />
+              <br />
+              <p>
+                If you are getting Finance, your Mechanical Breakdown Insurance
+                can be included in your loan.
+                <br />
+                You can get Mechanical Breakdown Insurance for any vehicle, even
+                if you didn’t buy it at Turners (subject to underwriting
+                criteria).
+              </p>
+            </div>
           </section>
 
           <section id="CI" className={styles.ciSection}>

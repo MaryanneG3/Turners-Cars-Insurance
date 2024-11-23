@@ -23,7 +23,7 @@
   height: 350px;
 }
 
-img {
+.imageContainer img {
   width: 100%;
   border-radius: 0 10px 10px 0;
 }
@@ -32,7 +32,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+
   width: 300px;
   height: 280px;
   padding: 25px;
@@ -160,4 +160,8 @@ img {
   flex-direction: row;
   align-items: center;
   padding: 5px 10px;
+}
+
+.mbiInfo p {
+  line-height: 1.5;
 }
