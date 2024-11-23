@@ -46,16 +46,16 @@
 }
 
 .insuranceQuoteBtn {
-  margin-top: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 10px;
-  background-color: #40bdf7;
-  border-radius: 12px;
-  width: 200px;
   display: flex;
-  align-items: center;
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 12px;
+
+  text-decoration: none;
+  background-color: #40bdf7;
+  color: #ffffff;
 }
 
 .insuranceQuoteBtn:hover {

@@ -57,14 +57,17 @@ function InsuranceQuote() {
               type="file"
               accept="image/*"
               className={styles.hiddenInput}
+              id="fileInput"
               onChange={handleFileInput}
             />
 
             <label htmlFor="fileInput" className={styles.customButton}>
-              Choose File
+              Choose file to upload
             </label>
           </div>
         </div>
+
+        <hr />
 
         <div className={styles.rightSection}>
           This will give breakdown of costs

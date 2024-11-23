@@ -5,18 +5,15 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: aqua;
 }
 
 .leftSection {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 60%;
   height: 100%;
-  padding: 0 20px;
-  background-color: azure;
 }
 
 .rightSection {
@@ -39,7 +36,9 @@
   justify-content: center;
   padding-inline: 30px;
   border-radius: 30px;
-  border: 3px solid #40bdf7;
+  border: none;
+  box-shadow: 0 0 10px 2px rgba(64, 189, 247, 0.5);
+  background-color: azure;
 }
 
 .previewImg {
@@ -71,15 +70,17 @@
 .customButton {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #57c6f9;
   color: white;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
   font-size: 16px;
   border: none;
+  margin-top: 20px;
 }
 
 .customButton:hover {
-  background-color: #0056b3;
+  font-weight: 600;
+  box-shadow: 0 0 10px 2px rgba(64, 189, 247, 0.5);
 }
