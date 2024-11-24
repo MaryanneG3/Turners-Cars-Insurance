@@ -12,7 +12,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 50%;
   height: 100%;
 }
 
@@ -21,7 +21,6 @@
   flex-direction: column;
   width: 600px;
   height: 450px;
-  /* background-color: black; */
   align-items: center;
   justify-content: center;
   padding: 30px;
@@ -76,14 +75,14 @@
   box-shadow: 0 0 10px 2px rgba(64, 189, 247, 0.5);
 }
 
-/* Right section */
+/* Right section ----------------------------------------------------------------*/
 
 .rightSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 50%;
   height: 100%;
   /* background-color: aquamarine; */
 }
@@ -94,18 +93,20 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50%;
+  height: 60%;
+  /* padding-bottom: 20px; */
+
   /* background-color: pink; */
 }
 
 .predictionResultsCont h3 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .list {
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 500px;
   padding: 5px;
   margin: 10px;
   border-bottom: 1px rgb(63, 63, 173) solid;
@@ -123,25 +124,66 @@
   /* background-color: green; */
 }
 
+/* Display results section ------------------------------------------------------------- */
+
 .insurancePremiumAmount {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50%;
+  height: 40%;
 
-  background-color: rgb(85, 237, 107);
+  margin-top: 40px;
+  padding-inline: 80px;
+
+  /* background-color: rgb(85, 237, 107); */
 }
 
-.ipContainer {
+/* .ipContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   border-bottom: 1px rgb(63, 63, 173) solid;
   height: 100%;
+} */
 
-  background-color: aquamarine;
+.apCont2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  /* background-color: pink; */
+}
+
+.cont3 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding: 15px 10px;
+  margin: 5px;
+  width: 100%;
+
+  /* background-color: green; */
+}
+
+.apCont2 h3 {
+  margin-bottom: 25px;
+  /* background-color: green; */
+}
+
+.cont3 span {
+  display: flex;
+  align-items: right;
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px rgb(63, 63, 173) solid;
+
+  /* background-color: rgb(187, 230, 29); */
 }

@@ -7,7 +7,7 @@ import { faCloudArrowDown } from "@fortawesome/free-solid-svg-icons";
 function InsuranceQuote() {
   const [image, setImage] = useState(null);
   const [results, setResults] = useState(null);
-  const [annualPremiums, setAP] = useState(null);
+  const [annualPremiums, setAP] = useState([]);
 
   const predictionEndpoint =
     "https://turners-vehicle-recognition.cognitiveservices.azure.com/";
@@ -43,20 +43,7 @@ function InsuranceQuote() {
 
   // send image to api
   const sendToPredictionAPI = async (file) => {
-    fetchInsurancePremium();
     try {
-      // const formData = new FormData();
-      // formData.append("file", file);
-
-      // const res = await fetch(
-      //   `${predictionEndpoint}/customvision/v3.0/Prediction/${projectId}/classify/iterations/${iterationName}/image`,
-      //   {
-      //     method: "POST",
-      //     headers: { "Prediction-Key": predictionKey },
-      //     body: formData,
-      //   }
-      // );
-
       const res = await fetch(finalURL, {
         method: "POST",
         headers: {
@@ -71,20 +58,62 @@ function InsuranceQuote() {
       }
 
       const data = await res.json();
-
-      // process response
       setResults(data.predictions);
+      console.log(data.predictions);
+      getVehicleType(data.predictions);
     } catch (err) {
-      console.error("Error calling Prediction API: ", err);
+      console.error("Error calling Custom Vision API: ", err);
       setResults(null);
     }
   };
 
-  const fetchInsurancePremium = async () => {
+  // determine vehicle type
+
+  const getVehicleType = (results) => {
+    console.log(results);
+    let categoryIdentified = false;
+
+    results.forEach((vehicle) => {
+      if (categoryIdentified) return;
+
+      switch (true) {
+        case vehicle.tagName === "SUV" && vehicle.probability > 0.8:
+          console.log("Your vehicle is classified as an SUV");
+          fetchInsurancePremium(vehicle.tagName);
+          categoryIdentified = true;
+          break;
+
+        case vehicle.tagName === "Sedan" && vehicle.probability > 0.8:
+          console.log("Your vehicle is classified as a Sedan");
+          fetchInsurancePremium(vehicle.tagName);
+          categoryIdentified = true;
+          break;
+
+        case vehicle.tagName === "Van" && vehicle.probability > 0.8:
+          console.log("Your vehicle is classified as a Van");
+          fetchInsurancePremium(vehicle.tagName);
+          categoryIdentified = true;
+          break;
+
+        case vehicle.tagName === "Ute" && vehicle.probability > 0.8:
+          console.log("Your vehicle is classified as a Ute");
+          fetchInsurancePremium(vehicle.tagName);
+          categoryIdentified = true;
+          break;
+
+        default:
+          console.log("Error identifying category. Have a cry.");
+          break;
+      }
+    });
+  };
+
+  const fetchInsurancePremium = async (vehicleCatergory) => {
+    console.log("Passed to Fetch Insurance Premium function");
     try {
-      const res = await fetch("http://localhost:4000/");
+      const res = await fetch(`http://localhost:4000/${vehicleCatergory}`);
       const data = await res.json();
-      console.log(data);
+      console.log(`Vehicle data successfully fetched from backend: ${data}`);
       setAP(data);
     } catch (e) {
       console.error(`Error fetching Inusrance Premiums: ${e}`);
@@ -130,11 +159,30 @@ function InsuranceQuote() {
           </div>
         </div>
 
-        <hr />
-
         <div className={styles.rightSection}>
           <div className={styles.insurancePremiumAmount}>
-            <div className={styles.ipContainer}></div>
+            {annualPremiums.map((ap) => (
+              <div key={ap.VehicleID} className={styles.apCont2}>
+                <h3>Your vehicle is classified as a {ap.category}</h3>
+                <div className={styles.cont3}>
+                  <p>
+                    Annual Insurance Premium:
+                    <span>
+                      $ {ap.annualPremiumStart} - $ {ap.annualPremiumEnd}
+                    </span>
+                  </p>
+                </div>
+                <div className={styles.cont3}>
+                  <p>
+                    Monthly Insurance Premium:
+                    <span>
+                      $ {ap.annualPremiumStart / 12} - ${" "}
+                      {(ap.annualPremiumEnd / 12).toFixed(2)}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
           <div className={styles.predictionResultsCont}>
             <h3>Prediction Results</h3>
