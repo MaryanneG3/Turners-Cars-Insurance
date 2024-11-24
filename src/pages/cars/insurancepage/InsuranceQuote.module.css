@@ -16,25 +16,15 @@
   height: 100%;
 }
 
-.rightSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 40%;
-  height: 100%;
-}
-
 .imageContainer {
   display: flex;
   flex-direction: column;
   width: 600px;
   height: 450px;
-  padding: 10px;
   /* background-color: black; */
   align-items: center;
   justify-content: center;
-  padding-inline: 30px;
+  padding: 30px;
   border-radius: 30px;
   border: none;
   box-shadow: 0 0 10px 2px rgba(64, 189, 247, 0.5);
@@ -45,6 +35,7 @@
   width: 100%;
   border-radius: 20px 20px 0 0;
   border-bottom: 1px solid #40bdf7;
+  overflow: hidden;
 }
 
 .uploadImgPrompt {
@@ -83,4 +74,74 @@
 .customButton:hover {
   font-weight: 600;
   box-shadow: 0 0 10px 2px rgba(64, 189, 247, 0.5);
+}
+
+/* Right section */
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  /* background-color: aquamarine; */
+}
+
+.predictionResultsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  /* background-color: pink; */
+}
+
+.predictionResultsCont h3 {
+  margin-bottom: 15px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  padding: 5px;
+  margin: 10px;
+  border-bottom: 1px rgb(63, 63, 173) solid;
+
+  /* background-color: pink; */
+}
+
+.list h5 {
+  width: 50%;
+  /* background-color: #57c6f9; */
+}
+
+.resultPercentage {
+  text-align: right;
+  /* background-color: green; */
+}
+
+.insurancePremiumAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+
+  background-color: rgb(85, 237, 107);
+}
+
+.ipContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  border-bottom: 1px rgb(63, 63, 173) solid;
+  height: 100%;
+
+  background-color: aquamarine;
 }
