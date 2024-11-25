@@ -34,6 +34,7 @@ function InsuranceQuote() {
 
     if (file) {
       setImage(URL.createObjectURL(file));
+      sendToPredictionAPI(file);
     }
   };
 
