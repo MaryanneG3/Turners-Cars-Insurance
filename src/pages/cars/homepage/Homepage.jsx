@@ -45,7 +45,10 @@ export default function Homepage() {
           <div className={styles.imageContainer}>
             {/* flex row, space btwn - image carousel*/}
             <img
-              src="../../../../public/images/carousel/Toyota-5-seater-SUV.jpg"
+              src={
+                process.env.PUBLIC_URL +
+                "images/carousel/Toyota-5-seater-SUV.jpg"
+              }
               alt="Toyota 5 Seater SUV"
             />
           </div>
