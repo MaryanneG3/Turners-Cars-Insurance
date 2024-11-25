@@ -45,10 +45,7 @@ export default function Homepage() {
           <div className={styles.imageContainer}>
             {/* flex row, space btwn - image carousel*/}
             <img
-              src={
-                process.env.PUBLIC_URL +
-                "images/carousel/Toyota-5-seater-SUV.jpg"
-              }
+              src="../../../../public/images/carousel/Toyota-5-seater-SUV.jpg"
               alt="Toyota 5 Seater SUV"
             />
           </div>
@@ -144,7 +141,7 @@ export default function Homepage() {
 
           <section id="CI" className={styles.ciSection}>
             <h2>Car Insurance</h2>
-            <p>
+            <div>
               We’ve got you covered from comprehensive, third party fire &
               theft, to third party property damage.
               <br />
@@ -194,7 +191,7 @@ export default function Homepage() {
                 />
                 Optional AA Roadside Assistance cover
               </div>
-            </p>
+            </div>
           </section>
         </div>
       </div>
