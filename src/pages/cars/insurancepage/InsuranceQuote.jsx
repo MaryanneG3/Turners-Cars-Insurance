@@ -30,16 +30,20 @@ function InsuranceQuote() {
   // DRAG and DROP Handling
   const handleDrop = (event) => {
     event.preventDefault();
-    const file = e.dataTransfer.files[0];
+    const file = event.dataTransfer.files[0];
 
-    if (file) {
+    if (file && file.type.startsWith("image/")) {
+      // Ensure it's an image file
       setImage(URL.createObjectURL(file));
       sendToPredictionAPI(file);
+    } else {
+      console.error("Only image files are allowed.");
     }
   };
 
-  const handleDrag = (e) => {
-    e.preventDefault();
+  const handleDrag = (event) => {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "copy"; // Indicate a copy operation
   };
 
   // send image to api
