@@ -28,8 +28,8 @@ function InsuranceQuote() {
   };
 
   // DRAG and DROP Handling
-  const handleDrop = (e) => {
-    e.preventDefault();
+  const handleDrop = (event) => {
+    event.preventDefault();
     const file = e.dataTransfer.files[0];
 
     if (file) {
