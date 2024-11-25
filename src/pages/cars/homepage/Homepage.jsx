@@ -141,7 +141,7 @@ export default function Homepage() {
 
           <section id="CI" className={styles.ciSection}>
             <h2>Car Insurance</h2>
-            <p>
+            <div>
               We’ve got you covered from comprehensive, third party fire &
               theft, to third party property damage.
               <br />
@@ -191,7 +191,7 @@ export default function Homepage() {
                 />
                 Optional AA Roadside Assistance cover
               </div>
-            </p>
+            </div>
           </section>
         </div>
       </div>
