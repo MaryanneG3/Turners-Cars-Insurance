@@ -2,10 +2,7 @@ import { NavLink } from "react-router-dom";
 import BaseLayout from "../../../layouts/baselayout/BaseLayout";
 import styles from "./Homepage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDoubleRight,
-  faAngleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Homepage() {
   return (
